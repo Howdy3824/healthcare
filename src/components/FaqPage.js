@@ -1,9 +1,6 @@
 import React from 'react';
-import { startLogout } from '../actions/auth';
-import { Link } from 'react-router-dom';
 
 var data = require('../assets/faq.json');
-console.log(data);
 
 export default () => {
     return(
