@@ -10,6 +10,7 @@ export default () => {
           <Link className="button" to="/experience">Experiences</Link>
           <Link className="button" to="/pdonor">Plasma Donors</Link>
           <Link className="button" to="/profile">Profile</Link>
+          <Link className="button" to="/faq">FAQ</Link>
         </div>
       </div>
     </div>
