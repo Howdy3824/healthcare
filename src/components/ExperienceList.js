@@ -18,6 +18,7 @@ export const ExperienceList = (props) => (
           </div>
         ) : (
             props.profiles.map((profile) => {
+              console.log(profile);
               return <ExperienceListItem key={profile.phone} {...profile} />;
             })
           )
