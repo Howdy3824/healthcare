@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ExpenseForm extends React.Component {
+export default class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
 
