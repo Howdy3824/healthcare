@@ -1,13 +1,13 @@
 const geocode = require('../utils/geocode.js')
 const nearbyHospitals = require('../utils/nearbyHospitals.js')
 
-var lat;
-var long;
+var lat = 26.1445;
+var long = 91.7362;
 
-navigator.geolocation.getCurrentPosition((position) => {
-  lat = position.coords.latitude;
-  long = position.coords.longitude;
-})
+// navigator.geolocation.getCurrentPosition((position) => {
+//   lat = position.coords.latitude;
+//   long = position.coords.longitude;
+// })
 
 // SET_EXPENSES
 export const setHospitals = (hospitals) => ({
