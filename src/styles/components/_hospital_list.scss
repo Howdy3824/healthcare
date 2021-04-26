@@ -1,9 +1,10 @@
-.list_card {
+.h-list_card {
     margin-top: 10px;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     font-size: small;
+    border-left: 4px solid green;
 }
-.list-item__title {
+.h-list-item__title {
     text-transform: uppercase;
 }

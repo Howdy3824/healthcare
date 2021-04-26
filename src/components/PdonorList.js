@@ -18,6 +18,7 @@ export const PdonorList = (props) => (
           </div>
         ) : (
             props.profiles.map((profile) => {
+              if(profile.pdonor)
               return <PdonorListItem key={profile.phone} {...profile} />;
             })
           )

@@ -62,6 +62,7 @@ export default class ProfileForm extends React.Component {
     return (
         <form className="form" onSubmit={this.onSubmit}>
         {this.state.error && <p className="form__error">{this.state.error}</p>}
+        <label>Name</label>
         <input
         autoFocus
         type="text"
@@ -70,6 +71,7 @@ export default class ProfileForm extends React.Component {
         value={this.state.name}
         onChange={this.onNameChange}
         />
+        <label>Email</label>
         <input
         type="email"
         placeholder="Email"
@@ -77,6 +79,7 @@ export default class ProfileForm extends React.Component {
         value={this.state.email}
         onChange={this.onEmailChange}
         />
+        <label>Phone Number</label>
           <input
           type="text"
           placeholder="Phone"
@@ -84,6 +87,7 @@ export default class ProfileForm extends React.Component {
           value={this.state.phone}
           onChange={this.onPhoneChange}
           />
+          <label>Address</label>
           <input
             type="text"
             placeholder="Address"
@@ -91,6 +95,7 @@ export default class ProfileForm extends React.Component {
             value={this.state.address}
             onChange={this.onAddressChange}
           />
+          <label>Write your experience</label>
           <textarea
             placeholder="Add your experience as a covid-19 patient."
             className="textarea"
@@ -98,13 +103,14 @@ export default class ProfileForm extends React.Component {
             onChange={this.onExperienceChange}
           >
           </textarea>
+          <label>Are you willing to donate Plasma?</label>
           <select
               className="select"
               value={this.state.pdonor}
               onChange={this.onPdonorChange}
             >
-              <option value="true">True</option>
-              <option value="false">False</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
             </select>
           <div>
             <h1></h1>
