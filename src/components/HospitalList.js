@@ -7,7 +7,7 @@ export const HospitalList = (props) => (
   <div className="content-container">
     <div className="list-header">
       <div className="show-for-mobile">Hospitals near your location</div>
-      <div className="show-for-desktop">Hospital near your location</div>
+      <div className="show-for-desktop">Hospitals near your location</div>
       <div className="show-for-desktop">Distance</div>
     </div>
     <div className="list-body">

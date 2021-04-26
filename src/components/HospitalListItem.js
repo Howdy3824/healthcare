@@ -7,6 +7,10 @@ const HospitalListItem = ({ name }) => (
         <div>
             <h3 className="list-item__title">{name}</h3>
         </div>
+        <ul>
+            <li>Beds Available : 24</li>
+            <li>Ventilators : 16</li>
+        </ul>
    </div>
      
    // </Link>
