@@ -1,0 +1,19 @@
+.button {
+    background: $blue;
+    border: none;
+    color: white;
+    display: inline-block; // setting this so that margin and padding comes to effect for the link which we are making to look like a button
+    font-size: $font-size-large;
+    font-weight: 300;
+    line-height: 1;
+    padding:  $s-size;
+    text-decoration: none;
+}
+
+.button--link {
+    background: none;
+}
+
+.button--secondary {
+    background: #888;
+}
