@@ -9,38 +9,16 @@ export default () => {
     return(
      
     <div className="content-container">
-        <div className="faq_card">
+        { data.map((faq)=> {
+            return <div className="faq_card">
             <div>
-                <h2>Q. {data[1]["q"]}?</h2>
+                <h2>Q. {faq["q"]}?</h2>
             </div>
             <div>
-                <h3>A. {data[1]["a"]}</h3>
-            </div>
-        </div>
-        <div className="faq_card">
-            <div>
-                <h2>Q. {data[2]["q"]}?</h2>
-            </div>
-            <div>
-                <h3>A. {data[2]["a"]}</h3>
+                <h3>A. {faq["a"]}</h3>
             </div>
         </div>
-        <div className="faq_card">
-            <div>
-                <h2>Q. {data[3]["q"]}?</h2>
-            </div>
-            <div>
-                <h3>A. {data[3]["a"]}</h3>
-            </div>
-        </div>
-        <div className="faq_card">
-            <div>
-                <h2>Q. {data[4]["q"]}?</h2>
-            </div>
-            <div>
-                <h3>A. {data[4]["a"]}</h3>
-            </div>
-        </div>
+        })}
     </div>
     
     );

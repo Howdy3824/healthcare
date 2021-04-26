@@ -4,7 +4,18 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     font-size: small;
     border-left: 4px solid green;
+    display: flex;
+}
+
+.h-list_card div {
+    flex: 1;
 }
 .h-list-item__title {
     text-transform: uppercase;
+}
+
+.h-list_card .dist {
+    font-weight: bolder;
+    text-align: right;
+
 }
