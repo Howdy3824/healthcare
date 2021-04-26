@@ -1,12 +1,12 @@
 const geocode = require('../utils/geocode.js')
 const nearbyHospitals = require('../utils/nearbyHospitals.js')
 
-var lat = 26.1445;
-var long = 91.7362;
+var lattitude = 28.644800;
+var longitude = 77.216721;
 
 // navigator.geolocation.getCurrentPosition((position) => {
-//   lat = position.coords.latitude;
-//   long = position.coords.longitude;
+//   lattitude = position.coords.latitude;
+//   longitude = position.coords.longitude;
 // })
 
 // SET_EXPENSES
@@ -15,15 +15,13 @@ export const setHospitals = (hospitals) => ({
   hospitals
 });
 
-export const startSetHospitals = () => {
+export const startSetHospitals = (lat = lattitude, long = longitude) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
-    console.log()
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(
           nearbyHospitals(lat,long, (error, hospitals) => {
-            console.log(lat,long)
             if(error){
                 return console.log(error)
             }
