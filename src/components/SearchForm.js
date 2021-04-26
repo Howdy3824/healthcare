@@ -41,21 +41,20 @@ export class SearchForm extends React.Component {
   };
   render() {
     return (
-        <form className="form" onSubmit={this.onSubmit}>
-        {this.state.error && <p className="form__error">{this.state.error}</p>}
-        <input
-        autoFocus
-        type="text"
-        placeholder="Name of the Place"
-        className="text-input"
-        value={this.state.searchValue}
-        onChange={this.onsearchValueChange}
-        />
-          <div>
-            <h1></h1>
-            <button className="button">Search</button>          
-          </div>
-        </form>
+        <div className="searchbar">
+          <form className="form search" onSubmit={this.onSubmit}>
+            {this.state.error && <p className="form__error">{this.state.error}</p>}
+            <input
+            autoFocus
+            type="text"
+            placeholder="Name of the Place"
+            className="text-input"
+            value={this.state.searchValue}
+            onChange={this.onsearchValueChange}
+            />
+            <button className="s_btn">Search</button> 
+          </form>
+        </div>
     )
   }
 }

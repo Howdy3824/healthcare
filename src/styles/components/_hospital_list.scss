@@ -17,5 +17,15 @@
 .h-list_card .dist {
     font-weight: bolder;
     text-align: right;
+}
 
+.searchbar .form .s_btn {
+    background: $off-white;
+    border: none;
+    color: $dark-blue; // setting this so that margin and padding comes to effect for the link which we are making to look like a button
+    font-size: $font-size-large;
+    font-weight: 400;
+    line-height: 1;
+    padding: $s-size;
+    text-decoration: none;
 }

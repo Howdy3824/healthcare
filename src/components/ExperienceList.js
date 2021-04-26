@@ -8,7 +8,6 @@ export const ExperienceList = (props) => (
     <div className="list-header">
       <div className="show-for-mobile">Experiences</div>
       <div className="show-for-desktop">Experience</div>
-      <div className="show-for-desktop">Details</div>
     </div>
     <div className="list-body">
       {
@@ -18,7 +17,7 @@ export const ExperienceList = (props) => (
           </div>
         ) : (
             props.profiles.map((profile) => {
-              console.log(profile);
+              // console.log(profile);
               return <ExperienceListItem key={profile.phone} {...profile} />;
             })
           )

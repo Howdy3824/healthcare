@@ -26,7 +26,7 @@ export const startSetHospitals = (lat = lattitude, long = longitude) => {
                 return console.log(error)
             }
             dispatch(setHospitals(hospitals));
-            console.log(hospitals)
+            // console.log(hospitals)
           })
         );
         // reject('Something went wrong!');

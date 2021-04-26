@@ -11,7 +11,7 @@ const HospitalListItem = ({ name ,location}) => (
             <li>Ventilators : 16</li>
         </ul>
         </div>
-        <div className="dist">{location.distance} Kms</div>
+        <div className="dist">{location.distance} mts</div>
    </div>
      
    // </Link>

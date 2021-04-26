@@ -1,10 +1,10 @@
 .button {
-    background: $blue;
+    background: $off-white;
     border: none;
-    color: white;
+    color: $dark-blue;
     display: inline-block; // setting this so that margin and padding comes to effect for the link which we are making to look like a button
     font-size: $font-size-large;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1;
     padding:  $s-size;
     text-decoration: none;
@@ -12,6 +12,7 @@
 
 .button--link {
     background: none;
+    color: aliceblue;
 }
 
 .button--secondary {

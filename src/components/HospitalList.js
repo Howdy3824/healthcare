@@ -18,7 +18,6 @@ export const HospitalList = (props) => (
           </div>
         ) : (
             props.hospitals.map((hospital) => {
-              console.log(hospital["location"]["distance"])
               return <HospitalListItem key={hospital.id} {...hospital} />;
             })
           )
