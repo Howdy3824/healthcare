@@ -44,8 +44,8 @@ export default class ProfileForm extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    if (!this.state.address || !this.state.phone) {
-      this.setState(() => ({ error: 'Please prvide address and phone.' }));
+    if (!this.state.address || !this.state.email || !this.state.name || !this.state.phone) {
+      this.setState(() => ({ error: 'Please prvide name, email, phone and address.' }));
     } else {
       this.setState(() => ({ error: '' }));
       this.props.onSubmit({
