@@ -11,6 +11,7 @@ import { firebase } from './firebase/firebase';
 import LoadingPage from './components/LoadingPage';
 import { startSetHospitals } from './actions/hospitals';
 import { startSetProfile } from './actions/profile';
+import { startSetProfiles } from './actions/profiles';
 
 const store = configureStore();
 const jsx = (
@@ -32,6 +33,8 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     store.dispatch(login(user.uid));
     store.dispatch(startSetProfile()).then(() => {
+    });
+    store.dispatch(startSetProfiles()).then(() => {
       console.log('fetched!')
     });
     store.dispatch(startSetHospitals()).then(() => {
