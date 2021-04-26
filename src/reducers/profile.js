@@ -9,9 +9,10 @@ const profileReducerDefaultState = {
     switch (action.type) {
        case 'SET_PROFILE':
             return {
+              ...state,
               phone: action.phone,
               address: action.address,
-              experinence: action.experience,
+              experience: action.experience,
               pdonor: action.pdonor
             };
       case 'EDIT_PROFILE':
@@ -19,7 +20,7 @@ const profileReducerDefaultState = {
           ...state,
           phone: action.phone,
           address: action.address,
-          experinence: action.experience,
+          experience: action.experience,
           pdonor: action.pdonor
         };
       case 'REMOVE_PROFILE':
@@ -27,7 +28,7 @@ const profileReducerDefaultState = {
           ...state,
           phone: '',
           address: '',
-          experinence: '',
+          experience: '',
           pdonor: false
         };
       default:

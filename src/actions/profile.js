@@ -3,7 +3,7 @@ import database from '../firebase/firebase';
 // EDIT_PROFILE
 export const editProfile = (profile) => ({
   type: 'EDIT_PROFILE',
-  profile
+  ...profile
 });
 
 export const startEditProfile = (profileData = {}) => {
@@ -26,7 +26,7 @@ export const startEditProfile = (profileData = {}) => {
 // SET_PROFILE
 export const setProfile = (profile) => ({
     type: 'SET_PROFILE',
-    profile
+    ...profile
   });
   
   export const startSetProfile = () => {
@@ -34,7 +34,6 @@ export const setProfile = (profile) => ({
       const uid = getState().auth.uid;
       return database.ref(`users/${uid}/profile`).once('value').then((snapshot) => {
         const profile = snapshot.val();
-        console.log(profile.phone)
         dispatch(setProfile(profile));
       });
     };

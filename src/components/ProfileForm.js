@@ -6,7 +6,7 @@ export default class ExpenseForm extends React.Component {
 
     this.state = {
       phone: props.profile ? props.profile.phone : '',
-      address: props.address ? props.profile.address : '',
+      address: props.profile ? props.profile.address : '',
       experience: props.profile ? props.profile.experience : '',
       pdonor: props.profile ? props.profile.pdonor : false,
       error: ''

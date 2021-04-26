@@ -1,37 +1,3 @@
-// import React from 'react';
-// import { connect } from 'react-redux';
-// import ProfileForm from './ProfileForm';
-// import { startEditProfile } from '../actions/profile';
-
-// export class ProfilePage extends React.Component {
-//   onSubmit = (profile) => {
-//     this.props.startEditProfile(profile);
-//     this.props.history.push('/');
-//   };
-//   render() {
-//     return (
-//       <div>
-//         <div className="page-header">
-//           <div className="content-container">
-//             <h1 className="page-header__title">Edit Profile</h1>
-//           </div>
-//         </div>
-//         <div className="content-container">
-//           <ProfileForm
-//           onSubmit={this.onSubmit}
-//           />
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// const mapDispatchToProps = (dispatch) => ({
-//   startEditProfile: (profile) => dispatch(startEditProfile(profile))
-// });
-
-// export default connect(undefined, mapDispatchToProps)(ProfilePage);
-
 import React from 'react';
 import { connect } from 'react-redux';
 import ProfileForm from './ProfileForm';
