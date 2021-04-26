@@ -5,6 +5,8 @@ export default class ExpenseForm extends React.Component {
     super(props);
 
     this.state = {
+      name: props.profile ? props.profile.name : '',
+      email: props.profile ? props.profile.email : '',
       phone: props.profile ? props.profile.phone : '',
       address: props.profile ? props.profile.address : '',
       experience: props.profile ? props.profile.experience : '',
@@ -12,6 +14,14 @@ export default class ExpenseForm extends React.Component {
       error: ''
     };
   }
+  onNameChange = (e) => {
+    const name = e.target.value;
+    this.setState(() => ({ name }));
+  };
+  onEmailChange = (e) => {
+    const email = e.target.value;
+    this.setState(() => ({ email }));
+  };
   onPhoneChange = (e) => {
     const phone = e.target.value;
     this.setState(() => ({ phone }));
@@ -25,7 +35,6 @@ export default class ExpenseForm extends React.Component {
     this.setState(() => ({ experience }));
   };
   onPdonorChange = (e) => {
-    var checkBox = document.getElementById("myCheck");
       if (e.target.value === 'true') {
         this.setState(() => ({ pdonor: true }));
       } else if (e.target.value === 'false') {
@@ -40,6 +49,8 @@ export default class ExpenseForm extends React.Component {
     } else {
       this.setState(() => ({ error: '' }));
       this.props.onSubmit({
+        name: this.state.name,
+        email: this.state.email,
         phone: this.state.phone,
         address: this.state.address,
         experience: this.state.experience,
@@ -54,11 +65,25 @@ export default class ExpenseForm extends React.Component {
         <input
         autoFocus
         type="text"
-        placeholder="Phone"
+        placeholder="Name"
         className="text-input"
-        value={this.state.phone}
-        onChange={this.onPhoneChange}
-      />
+        value={this.state.name}
+        onChange={this.onNameChange}
+        />
+        <input
+        type="email"
+        placeholder="Email"
+        className="text-input"
+        value={this.state.email}
+        onChange={this.onEmailChange}
+        />
+          <input
+          type="text"
+          placeholder="Phone"
+          className="text-input"
+          value={this.state.phone}
+          onChange={this.onPhoneChange}
+          />
           <input
             type="text"
             placeholder="Address"

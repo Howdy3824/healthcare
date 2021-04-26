@@ -28,7 +28,7 @@ export const PdonorList = (props) => (
 
 const mapStateToProps = (state) => {
   return {
-    profiles: state.profiles
+    profiles: state.profiles,
   };
 };
 

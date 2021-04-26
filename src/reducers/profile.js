@@ -1,4 +1,6 @@
 const profileReducerDefaultState = {
+    name: '',
+    email: '',
     phone: '',
     address: '',
     experience: '',
@@ -10,6 +12,8 @@ const profileReducerDefaultState = {
        case 'SET_PROFILE':
             return {
               ...state,
+              name: action.name,
+              email: action.email,
               phone: action.phone,
               address: action.address,
               experience: action.experience,
@@ -18,6 +22,8 @@ const profileReducerDefaultState = {
       case 'EDIT_PROFILE':
         return {
           ...state,
+          name: action.name,
+          email: action.email,
           phone: action.phone,
           address: action.address,
           experience: action.experience,
@@ -26,6 +32,8 @@ const profileReducerDefaultState = {
       case 'REMOVE_PROFILE':
         return {
           ...state,
+          name: '',
+          email: '',
           phone: '',
           address: '',
           experience: '',

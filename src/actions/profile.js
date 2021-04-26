@@ -10,13 +10,14 @@ export const startEditProfile = (profileData = {}) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
     const {
+      name = '',
+      email = '',
       phone = '',
       address = '',
       experience = '',
       pdonor = false
     } = profileData;
-    const profile = { phone, address, experience, pdonor };
-
+    const profile = { name, email, phone, address, experience, pdonor };
     database.ref(`users/${uid}/profile`).set(profile).then((ref) => {
       dispatch(editProfile(profile));
     });
