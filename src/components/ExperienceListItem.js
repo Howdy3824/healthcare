@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ExperienceListItem = ( { experience, name} ) => (
+const ExperienceListItem = ( { experience, name,email} ) => (
    // <Link className="list-item" to={`/edit/${id}`}>
     <div className="e-list_card">
         <div>
             <h3 className="exp-list-item__title">{experience}...</h3>
         </div>
         <div className="author">
-            <h3>- {name}</h3>
+            <ul>
+                <li>- {name}</li>
+                <li>Contact: {email}</li>
+            </ul>
         </div>
    </div>
      
