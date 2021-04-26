@@ -7,7 +7,6 @@ console.log(data);
 
 export default () => {
     return(
-     
     <div className="content-container">
         { data.map((faq)=> {
             return <div className="faq_card">
@@ -20,7 +19,6 @@ export default () => {
         </div>
         })}
     </div>
-    
     );
 };
     
