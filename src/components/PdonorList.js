@@ -1,24 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ExperienceListItem from './ExperienceListItem';
+import PdonorListItem from './PdonorListItem';
 //import selectExpenses from '../selectors/expenses';
 
-export const ExperienceList = (props) => (
+export const PdonorList = (props) => (
   <div className="content-container">
     <div className="list-header">
-      <div className="show-for-mobile">Experiences</div>
-      <div className="show-for-desktop">Experience</div>
+      <div className="show-for-mobile">Plasma Donors</div>
+      <div className="show-for-desktop">Name</div>
       <div className="show-for-desktop">Details</div>
     </div>
     <div className="list-body">
       {
         props.profiles.length === 0 ? (
           <div className="list-item list-item--message">
-            <span>No experiences to share.</span>
+            <span>No plasma donors registered currently.</span>
           </div>
         ) : (
             props.profiles.map((profile) => {
-              return <ExperienceListItem key={profile.phone} {...profile} />;
+              return <PdonorListItem key={profile.phone} {...profile} />;
             })
           )
       }
@@ -32,4 +32,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(ExperienceList);
+export default connect(mapStateToProps)(PdonorList);
