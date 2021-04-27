@@ -9,8 +9,10 @@ export default (state = profilesReducerDefaultState, action) => {
             email: data.profile.email,
             phone: data.profile.phone,
             address: data.profile.address,
+            zip: data.profile.zip,
             experience: data.profile.experience,
-            pdonor: data.profile.pdonor
+            pdonor: data.profile.pdonor,
+            bgroup: data.profile.bgroup
           }
         })
       default:
