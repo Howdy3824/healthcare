@@ -11,12 +11,12 @@ export class PdonorListFilter extends React.Component {
   };
   render() {
     return (
-      <div className="content-container">
+      <div className="content-container pfilter">
         <div className="input-group">
           <div className="input-group__item">
             <input
             type="text"
-            className="text-input"
+            className="text-input bgrp"
             placeholder="Search Bloodgroup ( like A+, B-, etc. )"
             value={this.props.dfilter.text}
             onChange={this.onTextChange}
@@ -25,7 +25,7 @@ export class PdonorListFilter extends React.Component {
           <div className="input-group__item">
             <input
             type="text"
-            className="text-input"
+            className="text-input add"
             placeholder="Search Address"
             value={this.props.dfilter.atext}
             onChange={this.onAtextChange}

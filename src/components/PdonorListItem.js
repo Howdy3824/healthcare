@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PdonorListItem = ( { name ,phone,email,address, bgroup } ) => (
+const PdonorListItem = ( { name ,phone,email,address, bgroup, zip } ) => (
    // <Link className="list-item" to={`/edit/${id}`}>
     <div className="p-list_card">
         <div>
@@ -9,7 +9,7 @@ const PdonorListItem = ( { name ,phone,email,address, bgroup } ) => (
             <ul>
                 <li>Phone : <span>{phone}</span></li>
                 <li>Email : <span>{email}</span></li>
-                <li>Address : <span>{address}</span></li>
+                <li>Address : <span>{address} - {zip}</span></li>
             </ul>
         </div>
         <div className="bg">{bgroup}</div>
