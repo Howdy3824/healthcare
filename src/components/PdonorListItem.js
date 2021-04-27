@@ -6,15 +6,14 @@ const PdonorListItem = ( { name ,phone,email,address, bgroup } ) => (
     <div className="p-list_card">
         <div>
             <h3 className="list-item__title">{name}</h3>
+            <ul>
+                <li>Phone : <span>{phone}</span></li>
+                <li>Email : <span>{email}</span></li>
+                <li>Address : <span>{address}</span></li>
+            </ul>
         </div>
-        <div>Blood Group: {bgroup}</div>
-        <ul>
-            <li>Phone : <span>{phone}</span></li>
-            <li>Email : <span>{email}</span></li>
-            <li>Address : <span>{address}</span></li>
-        </ul>
+        <div className="bg">{bgroup}</div>
    </div>
-     
    // </Link>
 );
 

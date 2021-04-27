@@ -3,6 +3,11 @@
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     font-size: small;
+    display: flex;
+}
+
+.p-list_card div{
+    flex: 1;
 }
 
 .p-list_card ul {
@@ -12,4 +17,14 @@
 
 .p-list_card ul span {
     font-weight: bold;
+}
+
+.p-list_card .bg {
+    font-size: $l-size;
+    font-weight: bolder;
+    color: rgb(131, 20, 20);
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
 }
