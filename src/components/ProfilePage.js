@@ -26,7 +26,7 @@ export class ProfilePage extends React.Component {
           onSubmit={this.onSubmit}
           />
 
-          
+
           <button className="button button--secondary" onClick={this.onRemove}>Remove Profile</button>
         </div>
       </div>
