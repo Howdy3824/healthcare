@@ -3,8 +3,10 @@ const profileReducerDefaultState = {
     email: '',
     phone: '',
     address: '',
+    zip: '',
     experience: '',
-    pdonor: false
+    pdonor: false,
+    bgroup: '' 
   };
 
   export default (state = profileReducerDefaultState, action) => {
@@ -16,8 +18,10 @@ const profileReducerDefaultState = {
               email: action.email,
               phone: action.phone,
               address: action.address,
+              zip: action.zip,
               experience: action.experience,
-              pdonor: action.pdonor
+              pdonor: action.pdonor,
+              bgroup: action.bgroup
             };
       case 'EDIT_PROFILE':
         return {
@@ -26,8 +30,10 @@ const profileReducerDefaultState = {
           email: action.email,
           phone: action.phone,
           address: action.address,
+          zip: action.zip,
           experience: action.experience,
-          pdonor: action.pdonor
+          pdonor: action.pdonor,
+          bgroup: action.bgroup
         };
       case 'REMOVE_PROFILE':
         return {
@@ -36,8 +42,10 @@ const profileReducerDefaultState = {
           email: '',
           phone: '',
           address: '',
+          zip: '',
           experience: '',
-          pdonor: false
+          pdonor: false,
+          bgroup: ''
         };
       default:
         return state;

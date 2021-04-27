@@ -9,8 +9,10 @@ export default class ProfileForm extends React.Component {
       email: props.profile ? props.profile.email : '',
       phone: props.profile ? props.profile.phone : '',
       address: props.profile ? props.profile.address : '',
+      zip: props.profile ? props.profile.zip : '',
       experience: props.profile ? props.profile.experience : '',
       pdonor: props.profile ? props.profile.pdonor : false,
+      bgroup: props.profile ? props.profile.bgroup : '',
       error: ''
     };
   }
@@ -30,6 +32,10 @@ export default class ProfileForm extends React.Component {
     const address = e.target.value;
     this.setState(() => ({ address }));
   };
+  onZipChange = (e) => {
+    const zip = e.target.value;
+    this.setState(() => ({ zip }));
+  };
   onExperienceChange = (e) => {
     const experience = e.target.value;
     this.setState(() => ({ experience }));
@@ -41,20 +47,30 @@ export default class ProfileForm extends React.Component {
         this.setState(() => ({ pdonor: false }));
       }
   }
+  onBgroupChange = (e) => {
+    const bgroup = e.target.value;
+    if(bgroup !== 'select') {
+      this.setState(() => ({ bgroup }));
+    }
+  }
   onSubmit = (e) => {
     e.preventDefault();
 
-    if (!this.state.address || !this.state.email || !this.state.name || !this.state.phone) {
-      this.setState(() => ({ error: 'Please prvide name, email, phone and address.' }));
-    } else {
+    if (!this.state.address || !this.state.email || !this.state.name || !this.state.phone || !this.state.zip) {
+      this.setState(() => ({ error: 'Please prvide name, email, address and pincode.' }));
+    } else if (this.state.pdonor && !this.state.bgroup) {
+      this.setState(() => ({ error: 'Please prvide blood group if you wish to donate plasma.' }));
+    }else {
       this.setState(() => ({ error: '' }));
       this.props.onSubmit({
         name: this.state.name,
         email: this.state.email,
         phone: this.state.phone,
         address: this.state.address,
+        zip: this.state.zip,
         experience: this.state.experience,
-        pdonor: this.state.pdonor
+        pdonor: this.state.pdonor,
+        bgroup: this.state.bgroup
       });
     }
   };
@@ -95,7 +111,15 @@ export default class ProfileForm extends React.Component {
             value={this.state.address}
             onChange={this.onAddressChange}
           />
-          <label>Write your experience</label>
+          <label>Pincode</label>
+          <input
+          type="text"
+          placeholder="Pincode"
+          className="text-input"
+          value={this.state.zip}
+          onChange={this.onZipChange}
+          />
+          <label>Write your experience...</label>
           <textarea
             placeholder="Add your experience as a covid-19 patient."
             className="textarea"
@@ -111,6 +135,22 @@ export default class ProfileForm extends React.Component {
             >
               <option value="true">Yes</option>
               <option value="false">No</option>
+            </select>
+            <label>Blood Group</label>
+            <select
+              className="select"
+              value={this.state.bgroup}
+              onChange={this.onBgroupChange}
+            >
+              <option value="select">Select your bloodgroup</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
             </select>
           <div>
             <h1></h1>
