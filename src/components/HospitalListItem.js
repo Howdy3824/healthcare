@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const HospitalListItem = ({ name ,location}) => (
+const HospitalListItem = ({ pital ,r}) => (
    // <Link className="list-item" to={`/edit/${id}`}>
     <div className="h-list_card ">
         <div>
-            <h3 className="h-list-item__title">{name}</h3>
+            <h3 className="h-list-item__title">{pital.name}</h3>
         <ul>
             <li>Beds Available : 24</li>
             <li>Ventilators : 16</li>
+            <li>Address : {r.address}</li>
         </ul>
         </div>
-        <div className="dist">{location.distance} mts</div>
+        <div className="dist">{pital.location.distance} mts away</div>
    </div>
      
    // </Link>

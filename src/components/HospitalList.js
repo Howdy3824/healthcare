@@ -18,7 +18,7 @@ export const HospitalList = (props) => (
           </div>
         ) : (
             props.hospitals.map((hospital) => {
-              return <HospitalListItem key={hospital.id} {...hospital} />;
+              return <HospitalListItem key={hospital.pital.id} {...hospital} />;
             })
           )
       }

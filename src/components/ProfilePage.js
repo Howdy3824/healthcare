@@ -2,14 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ProfileForm from './ProfileForm';
 import { startEditProfile, startRemoveProfile } from '../actions/profile';
+import {startSetProfiles} from '../actions/profiles';
 
 export class ProfilePage extends React.Component {
   onSubmit = (profile) => {
     this.props.startEditProfile(profile);
+    this.props.startSetProfiles();
     this.props.history.push('/');
   };
   onRemove = () => {
     this.props.startRemoveProfile();
+    this.props.startSetProfiles();
     this.props.history.push('/');
   };
   render() {
@@ -40,7 +43,8 @@ const mapDispatchToProps = (dispatch, props) => ({
   startEditProfile: (profile) => {
     console.log(profile);
     dispatch(startEditProfile(profile));},
-  startRemoveProfile: () => dispatch(startRemoveProfile())
+  startRemoveProfile: () => dispatch(startRemoveProfile()),
+  startSetProfiles: () => dispatch(startSetProfiles())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage);

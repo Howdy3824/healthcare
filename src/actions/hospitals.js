@@ -1,4 +1,4 @@
-const geocode = require('../utils/geocode.js')
+const rgeocode = require('../utils/rgeocode.js')
 const nearbyHospitals = require('../utils/nearbyHospitals.js')
 
 var lattitude = 28.644800;
@@ -25,8 +25,23 @@ export const startSetHospitals = (lat = lattitude, long = longitude) => {
             if(error){
                 return console.log(error)
             }
-            dispatch(setHospitals(hospitals));
-            // console.log(hospitals)
+            var data = [];
+            hospitals.forEach(pital => {
+              rgeocode(pital.location.lat, pital.location.lng , (error, r) => {
+                if(error)
+                {
+                    console.log(error);
+                }
+                data.push({pital, r})
+                //console.log(hospital,r);
+                });
+              //console.log(hospitals.location.lat, hospitals[0].location.lng)
+            });
+            setTimeout(() => {
+              console.log(data);
+              dispatch(setHospitals(data));
+            },2000)
+            
           })
         );
         // reject('Something went wrong!');
