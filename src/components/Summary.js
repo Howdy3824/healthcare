@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link , NavLink} from 'react-router-dom';
 
 export default () => {
   
@@ -7,10 +7,10 @@ export default () => {
     <div className="page-header">
       <div className="content-container">
         <div className="page-header__actions">
-          <Link className="button" to="/experience">Experiences</Link>
-          <Link className="button" to="/pdonor">Plasma Donors</Link>
-          <Link className="button" to="/profile">Profile</Link>
-          <Link className="button" to="/faq">FAQ</Link>
+          <NavLink className="button" to="/experience" activeClassName="selected">Experiences</NavLink>
+          <NavLink className="button" to="/pdonor" activeClassName="selected">Plasma Donors</NavLink>
+          <NavLink className="button" to="/profile" activeClassName="selected">Profile</NavLink>
+          <NavLink className="button" to="/faq" activeClassName="selected">FAQ</NavLink>
         </div>
       </div>
     </div>
