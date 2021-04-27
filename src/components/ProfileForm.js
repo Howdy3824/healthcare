@@ -57,9 +57,9 @@ export default class ProfileForm extends React.Component {
     e.preventDefault();
 
     if (!this.state.address || !this.state.email || !this.state.name || !this.state.phone || !this.state.zip) {
-      this.setState(() => ({ error: 'Please prvide name, email, address and pincode.' }));
+      this.setState(() => ({ error: 'Please provide name, email, address and pincode.!' }));
     } else if (this.state.pdonor && !this.state.bgroup) {
-      this.setState(() => ({ error: 'Please prvide blood group if you wish to donate plasma.' }));
+      this.setState(() => ({ error: 'Please provide blood group if you wish to donate plasma.!' }));
     }else {
       this.setState(() => ({ error: '' }));
       this.props.onSubmit({
@@ -77,7 +77,7 @@ export default class ProfileForm extends React.Component {
   render() {
     return (
         <form className="form" onSubmit={this.onSubmit}>
-        {this.state.error && <p className="form__error">{this.state.error}</p>}
+        
         <label>Name</label>
         <input
         autoFocus
@@ -152,6 +152,7 @@ export default class ProfileForm extends React.Component {
               <option value="O+">O+</option>
               <option value="O-">O-</option>
             </select>
+          {this.state.error && <p className="form__error">{this.state.error}</p>}
           <div>
             <h1></h1>
             <button className="button">Save Profile</button>          

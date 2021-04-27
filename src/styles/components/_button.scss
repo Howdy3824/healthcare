@@ -16,5 +16,9 @@
 }
 
 .button--secondary {
-    background: #888;
+    background: $dark-blue;
+    color: aliceblue;
+    float: right;
+    margin: 20px;
+
 }
