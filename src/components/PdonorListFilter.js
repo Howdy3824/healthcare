@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setTextFilter } from '../actions/dfilter';
+import { setTextFilter, setAtextFilter } from '../actions/dfilter';
 
 export class PdonorListFilter extends React.Component {
   onTextChange = (e) => {
     this.props.setTextFilter(e.target.value);
+  };
+  onAtextChange = (e) => {
+    this.props.setAtextFilter(e.target.value);
   };
   render() {
     return (
@@ -19,6 +22,15 @@ export class PdonorListFilter extends React.Component {
             onChange={this.onTextChange}
             />
           </div>
+          <div className="input-group__item">
+            <input
+            type="text"
+            className="text-input"
+            placeholder="Search Address"
+            value={this.props.dfilter.atext}
+            onChange={this.onAtextChange}
+            />
+          </div>
         </div>
       </div>
     );
@@ -31,6 +43,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   setTextFilter: (text) => dispatch(setTextFilter(text)),
+  setAtextFilter: (atext) => dispatch(setAtextFilter(atext))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PdonorListFilter);

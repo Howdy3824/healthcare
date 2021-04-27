@@ -1,5 +1,6 @@
 const dfilterReducerDefaultState = {
-    text: ''
+    text: '',
+    atext: ''
 };
 
 export default (state = dfilterReducerDefaultState, action) => {
@@ -7,8 +8,13 @@ export default (state = dfilterReducerDefaultState, action) => {
       case 'SET_TEXT_FILTER':
         return {
           ...state,
-          text: action.text
+          text: action.text,
         };
+      case 'SET_ATEXT_FILTER':
+          return {
+            ...state,
+            atext: action.atext
+      };
       default:
         return state;
     }
