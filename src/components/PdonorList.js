@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PdonorListItem from './PdonorListItem';
+import selectPdonors from '../selectors/getPdonors';
 //import selectExpenses from '../selectors/expenses';
 
 export const PdonorList = (props) => (
@@ -29,7 +30,7 @@ export const PdonorList = (props) => (
 
 const mapStateToProps = (state) => {
   return {
-    profiles: state.profiles,
+    profiles: selectPdonors(state.profiles,state.dfilter)
   };
 };
 
