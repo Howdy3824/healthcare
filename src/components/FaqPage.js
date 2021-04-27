@@ -1,10 +1,13 @@
 import React from 'react';
+import Summary from './Summary';
 
 var data = require('../assets/faq.json');
 
 export default () => {
     return(
-    <div className="content-container">
+        <div>
+        <Summary />
+        <div className="content-container">
         { data.map((faq,index)=> {
             return <div className="faq_card" key={index}>
             <div>
@@ -16,6 +19,8 @@ export default () => {
         </div>
         })}
     </div>
+        </div>
+    
     );
 };
     

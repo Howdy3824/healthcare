@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProfileForm from './ProfileForm';
+import Summary from './Summary';
 import { startEditProfile, startRemoveProfile } from '../actions/profile';
 import {startSetProfiles} from '../actions/profiles';
 
@@ -18,11 +19,7 @@ export class ProfilePage extends React.Component {
   render() {
     return (
       <div>
-        <div className="page-header">
-          <div className="content-container">
-            <h1 className="page-header__title">Edit Profile</h1>
-          </div>
-        </div>
+      <Summary />
         <div className="content-container">
           <ProfileForm
           profile={this.props.profile}
