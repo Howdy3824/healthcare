@@ -23,8 +23,9 @@
     font-size: $l-size;
     font-weight: bolder;
     color: rgb(131, 20, 20);
-    text-align: center;
+    text-align: right;
     margin-top: auto;
     margin-bottom: auto;
+    margin-right: $l-size;
     display: block;
 }

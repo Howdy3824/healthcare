@@ -8,6 +8,7 @@ export const PdonorList = (props) => (
     <div className="list-header">
       <div className="show-for-mobile">Plasma Donors</div>
       <div className="show-for-desktop">Name</div>
+      <div className="show-for-desktop">Blood Group</div>
     </div>
     <div className="list-body">
       {
